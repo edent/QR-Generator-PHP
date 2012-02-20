@@ -42,7 +42,7 @@
 #
 #
 # [usage]
-#   qr_img.php?d=[data]&e=[(L,M,Q,H)]&s=[int]&v=[(1-40)]&t=[(J,G)]&size=[int]&download=[filename]
+#   qr.php?d=[data]&e=[(L,M,Q,H)]&s=[int]&v=[(1-40)]&t=[(J,G)]&size=[int]&download=[filename]
 #			 (&m=[(1-16)]&n=[(2-16)](&p=[(0-255)],&o=[data]))
 #
 #   d		= data				URL encoded data.
