@@ -52,6 +52,7 @@
 #   t		= image type		J: jpeg image, G: GIF image, default: PNG image
 #   size	= image size		Integer. Specifies the width & height of the image. Default 400. Max 1480.
 #   download = File name	URL encoded filename. If set, the content disposition will change to tell the browser to download the file.
+#   raw  = rawurldecode the data. If set, the data in d will be URL decoded changing "%20" into " " etc.
 #
 #  structured append  m of n (experimental)
 #   n= structure append n (2-16)
@@ -68,13 +69,20 @@ $path			= "./../data";		//	You must set path to data files.
 $image_path	= "./../image";	//	You must set path to QRcode frame images.
 
 //	Get the parameters
-$qrcode_data_string	=	rawurldecode($_GET["d"]);
-$qrcode_error_correct=	strtolower($_GET["e"]);
-$qrcode_module_size	=	$_GET["s"];
-$qrcode_version		=	$_GET["v"];
-$qrcode_image_type	=	strtolower($_GET["t"]);
-$qrcode_image_size	=	$_GET["size"];
-$qrcode_download		=	$_GET["download"];
+$qrcode_error_correct= strtolower($_GET["e"]);
+$qrcode_module_size  = $_GET["s"];
+$qrcode_version      = $_GET["v"];
+$qrcode_raw          = $_GET["raw"];
+$qrcode_image_type   = strtolower($_GET["t"]);
+$qrcode_image_size   = $_GET["size"];
+$qrcode_download     = $_GET["download"];
+
+if ($qrcode_raw)
+{
+	$qrcode_data_string  = rawurldecode($_GET["d"]);
+} else {
+	$qrcode_data_string  = $_GET["d"];
+}
 
 //	Experimental Parameters
 $qrcode_structureappend_n=@$_GET["n"];
