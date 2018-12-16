@@ -1,11 +1,13 @@
+## QR Codes are cool!
+
 This program outputs a QRcode as either a PNG, JPEG, or GIF.
 Max image size of 1480*1480 pixels.
+
+Optional "Bulk" mode at `bulkqr.php` if you want to generate *lots* of QR codes
 
 Supports QRcode version 1-40.
 
 Requires PHP4.1 and gd 1.6 or higher.
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=edent42&url=https://github.com/edent/QR-Generator-PHP&title=QR-Generator-PHP&language=&tags=github&category=software) 
 
 Usage:
 qr.php?d=[data]&e=[(L,M,Q,H)]&s=[int]&v=[(1-40)]&t=[(J,G)]&size=[int]&download=[filename]
